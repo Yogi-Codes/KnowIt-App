@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head><button ><a href="/pages/new" style="color:rgb(0, 0, 0) , ">New Article</a> </button>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <h1>        blogs            </h1>
+   
+    <h2></h2>
+    <p></p>
+    <p></p>
+
+<% blogs.forEach(function(article) { %>
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="https://tryhackme-images.s3.amazonaws.com/user-avatars/6ba0d49c3dd47aeb901c29d701c8d426.jpg" alt="Card image cap" style="width:100px;height:100px; border-radius: 50%">
+    <div class="card-body">
+      <h5 class="card-title"><%= article.title %></h5>
+      <p class="card-text"><%= article.description %></p>
+      <p  class="card-text"><%= article.date %></p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+  <% }); %>
+
+ 
+
+</head>
+<body>
+    
+</body>
+</html>
