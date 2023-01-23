@@ -73,7 +73,7 @@ return (<div style={{display:"flex",justifyContent:"space-evenly",flexWrap:"wrap
 <div style={{width:"40vw",height:"8.57vh",display:"flex",justifyContent:"space-evenly",alignItems:"center"}}>
         <img src="https://tryhackme-images.s3.amazonaws.com/user-avatars/6ba0d49c3dd47aeb901c29d701c8d426.jpg" alt="1" className="proimg" />
     <div style={{display:"flex",flexDirection:"column"}}>
-        <a href="https://github.com/Yogi-Codes/knowit/tree/master" target="blank" >
+        <a href="https://github.com/Yogi-Codes/KnowIt-App" target="blank" >
         <h1 className="text3">KnowIt</h1>
         </a>
     <p className="desc">A Mern based webapp which is a portfolio and personal blog at once</p>
