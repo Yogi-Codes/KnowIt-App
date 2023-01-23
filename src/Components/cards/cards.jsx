@@ -1,9 +1,7 @@
 
 import "./cards.css"
+import parse from 'html-react-parser';
 
-
-
-    
 
 
 import * as React from 'react';
@@ -12,6 +10,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {  CardActionArea, CardActions } from '@mui/material';
+
 
 
 
@@ -31,11 +30,11 @@ export default function MultiActionAreaCard(props) {
           width="200px"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="div" sx={{color:"beige"}} >
             {props.cardDetail.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-          {props.cardDetail.description}
+          {parse(props.cardDetail.description.slice(0,200).replace(/<img[^>]*>/g, " "))}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -43,7 +42,7 @@ export default function MultiActionAreaCard(props) {
      
       <div class="btn-2">
    
-    <a href="/"><span>Read more ...</span></a>
+    <a href={`/blogs/${props.cardDetail._id}`}><span>Read more ...</span></a>
   </div>
   
       

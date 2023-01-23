@@ -1,0 +1,35 @@
+.butt{
+
+padding: 15px;
+width: 100%;
+background-color: rgb(1, 53, 15);
+color:white;
+font-size: 15px;
+font-weight: bold;
+
+}
+
+button:hover{
+
+    padding: 18px;
+    width: 100%;
+    background-color: black;
+    color:white;
+    transition:  background-color 3s;
+    transition:  padding .5s;
+    transition:  color 1s;
+    transition:  font-weight 1s;
+    font-size: 15px;
+
+}
+
+.butt2{
+
+    padding: 15px;
+    width: 100%;
+    background-color: rgb(1, 53, 15);
+    color:white;
+    font-size: 15px;
+    font-weight: bold;
+
+}

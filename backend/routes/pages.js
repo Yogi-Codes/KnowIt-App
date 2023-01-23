@@ -3,7 +3,8 @@ const { default: mongoose } = require('mongoose');
 const router = express.Router();
 var articleSchema= require("./../models/article.js")
 module.exports=router;
-mongoose.connect('mongodb://localhost:27017/blogged',{useNewUrlParser: true,useUnifiedTopology: true})
+require("dotenv").config()
+mongoose.connect(`mongodb+srv://anik9430:${process.env.MongoPass}@cluster0.seemx1k.mongodb.net/?retryWrites=true&w=majority`,{useNewUrlParser: true,useUnifiedTopology: true})
 
 router.get('/', (req,res)=>{
 articleSchema.find({}, function(error, articles) {
@@ -20,19 +21,25 @@ articleSchema.find({}, function(error, articles) {
 
 
 })
-// router.get('/:id',(req,res) =>{
+router.get('/:id', (req,res)=>{
+    articleSchema.findById(req.params.id, function(error, articles) {
+        if (error) {
+            console.log(error);
+        } else {
+            
+            res.status(200).send(articles);
+        }
+    });
+    
+    
+    
+    
+    
+    
+    })
 
-// res.render('./../Views/Home',{article:article})
-
-//  })
-
-router.get('/new',(req,res)=>{
-
-res.render('newArticle')
 
 
-
-})
 
 
 
@@ -40,13 +47,16 @@ router.post('/',async (req,res)=>{
 
     const blog = new articleSchema({
             title : req.body.title,
-            description: req.body.desc,
+            description: req.body.description,
             date : req.body.date,
             thumbnail: req.body.thumbnail,
             cover: req.body.cover
     })
     try{
         console.log(blog)
+        console.log(req.body.desc)
+
+
         
         await blog.save(function(e){
             console.log(e);

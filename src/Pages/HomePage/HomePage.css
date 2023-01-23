@@ -21,3 +21,144 @@
     border-radius: 5px;
     
   }
+
+
+.butto{
+
+background-color: black;
+color: beige;
+width: 40px;
+height: 30px;
+align-items: center;
+justify-content: space-evenly;
+display: flex;
+border-radius: 50%;
+font-size: "100px";
+cursor: pointer
+
+
+
+}
+.butto:hover{
+
+  background-color: black;
+  color: beige;
+  width: 60px;
+  height: 40px;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  border-radius: 50%;
+  font-size: "150px";
+  transition-duration: width 2s;
+  transition-duration: height 2s;
+  transition-duration: font-size 2s;
+  cursor: pointer
+
+
+}
+.portia{
+
+color: beige;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+
+
+}
+.social{
+
+width: 40px;
+height: 40px;
+
+
+}
+.blinking-cursor {
+  animation: blink 3s infinite;
+}
+.blinking-cursor2 {
+  animation: blink 1s infinite;
+}
+
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.cropped1 {
+  width: 18vw; 
+  height: 18vw; 
+  object-fit: cover;
+  border: 5px solid black;
+  border-radius: 50%;
+  
+}
+
+.text1{
+
+
+  color: beige;
+  font-size:1.9vw
+  
+  
+
+}
+.text2{
+
+
+  color: beige;
+  font-size:5vh
+  
+  
+
+}
+.bubble {
+
+  width: 100px; 
+  height: 100px; 
+  object-fit: cover;
+  border: 5px solid black;
+  border-radius: 50%;
+}
+
+.bubble-text {
+  text-align: center;
+}
+.curs{
+
+position: absolute;
+bottom: 0;
+
+
+}
+
+.proimg{
+  width: 4vw; 
+  height: 4vw; 
+  border-radius: 50%;
+  object-fit: cover;
+}
+.desc{
+
+font-size: 0.8vw;
+color:gold
+
+}
+.text3{
+
+
+  color: beige;
+  font-size:1.5vw
+  
+  
+
+}
+.t2{
+
+padding: 0.5vw;
+
+}
+a {
+  text-decoration: none;
+}

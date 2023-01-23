@@ -12,21 +12,19 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import { Link } from 'react-router-dom';
 
 const pages = [{
   name: 'Portfolio',
   destination: '/'
 },
 {
-  name: 'services',
-  destination: '/'
-},
-{
   name: 'Blog',
-  destination: '/pages'
+  destination: '/blogs'
 }];
 
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
+
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -128,23 +126,32 @@ const ResponsiveAppBar = () => {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },backgroundColor: "black"  }}>
             {pages.map((page, index) => (
+              <Link to={`${page.destination}`} style={{textDecoration: "none"}} >
               <Button
-              href='http://localhost:3001/blogs'
+                className="no-hover"
                 key={index}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: 'white', display: 'block'  }}
               >
                 {page.name}
               </Button>
+              </Link>
             ))}
+               <a href="https://github.com/Yogi-Codes/Resume" target="_blank" rel="noreferrer"> 
+              <Button
+                className="no-hover"
+                key="Resume"
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block'  }}
+              >
+                Resume
+              </Button>
+              </a>
+              
           </Box>
 
           <Box sx={{ flexGrow: 0 ,backgroundColor: "black" }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="https://tryhackme-images.s3.amazonaws.com/user-avatars/6ba0d49c3dd47aeb901c29d701c8d426.jpg" />
-              </IconButton>
-            </Tooltip>
+            
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -161,12 +168,61 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+                    <MenuItem key={`Home`} onClick={handleCloseUserMenu}>
+                    <Link to="/" style={{textDecoration: "none"}} >
+                     <Typography color="black"  textAlign="center">{`Home`}</Typography>
+                      </Link>
+                      </MenuItem>
+                      <MenuItem key={`Blogs`} onClick={handleCloseUserMenu}>
+                    <Link to="/blogs" style={{textDecoration: "none"}} >
+                     <Typography color="black"  textAlign="center">{`Blogs`}</Typography>
+                      </Link>
+                      </MenuItem>
+                      <MenuItem key={`New Blog`} onClick={handleCloseUserMenu}>
+                    <Link to="/blogs/new" style={{textDecoration: "none"}} >
+                     <Typography color="black"  textAlign="center">{`New Blog`}</Typography>
+                      </Link>
+                      </MenuItem>
+                      
             </Menu>
+            <div style={{display:"flex", justifyContent:"right",alignItems:"center",width:"100%"}} className="nohover"  >
+            <Tooltip title="Open settings" className='no-hover' >
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 , mr:10 }} className="no-hover">
+                <Avatar alt="Remy Sharp" src="https://tryhackme-images.s3.amazonaws.com/user-avatars/6ba0d49c3dd47aeb901c29d701c8d426.jpg" />
+              </IconButton>
+            
+            </Tooltip>
+            <Tooltip title="Github" className='no-hover' >
+            <a href="https://github.com/Yogi-Codes" rel="noreferrer" target="_blank">
+              <IconButton  sx={{ p: 0,mr:2 }} className="no-hover" >
+
+                <Avatar alt="Remy Sharp" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://github.com&size=256" />
+              </IconButton>
+              </a>
+            </Tooltip>
+            <Tooltip title="Youtube" className='no-hover' >
+            <a href="https://www.youtube.com/@yogicodes" rel="noreferrer" target="_blank">
+              <IconButton  sx={{ p: 0,mr:2 }} className="no-hover">
+                <Avatar alt="Remy Sharp" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://youtube.com&size=256" />
+              </IconButton>
+              </a>
+            </Tooltip>
+            <Tooltip title="Linkedin" className='no-hover' >
+            <a href="https://www.linkedin.com/in/anik-ghosh-954a85202/" rel="noreferrer" target="_blank">
+              <IconButton  sx={{ p: 0,mr:2 }} className="no-hover">
+                <Avatar alt="Remy Sharp" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://linkedin.com&size=256" />
+              </IconButton>
+              </a>
+            </Tooltip>
+            <Tooltip title="Twitter" className='no-hover' >
+            <a href="https://twitter.com/The_Darkist" rel="noreferrer" target="_blank">
+              <IconButton  sx={{ p: 0,mr:2 }} className="no-hover">
+                
+                <Avatar alt="Remy Sharp" src="https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=http://twitter.com&size=256" />
+              </IconButton>
+              </a>
+            </Tooltip>
+            </div>
           </Box>
         </Toolbar>
       </Container>

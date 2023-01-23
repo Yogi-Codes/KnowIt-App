@@ -7,6 +7,7 @@ import { Route,Routes } from "react-router-dom";
 import Blogmaker from "./Components/Blogs/Blogs"
 import ResponsiveAppBar from "./Components/AppBar/ResponsiveAppBar";
 import NewArticle from "./Components/NewArticle/NewArticle"
+import ArticleView from "./Components/ArticleView/ArticleView";
 
 
 function App() {
@@ -44,6 +45,7 @@ const [blogs, setBlogs] = useState([]);
    <Route path="/" element={<HomePage />}/>
    <Route path="/blogs" element={<Blogmaker data={blogs} />} />
    <Route path="/blogs/new" element={<NewArticle/>} />
+   <Route path="/blogs/:id" element={<ArticleView/>} />
 
     </Routes>
 

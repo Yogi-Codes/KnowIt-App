@@ -1,0 +1,10 @@
+.no-hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .no-hover:hover {
+    background-color: black;
+    color: white;
+  }
+
