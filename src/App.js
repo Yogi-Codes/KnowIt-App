@@ -42,7 +42,7 @@ const [blogs, setBlogs] = useState([]);
     backgroundRepeat: 'no-repeat',
     height: '100vh',position:"fixed",top:"0"}} ></div>
     <Routes>
-   <Route path="/" element={<HomePage />}/>
+   <Route path="/"  element={<HomePage />}/>
    <Route path="/blogs" element={<Blogmaker data={blogs} />} />
    <Route path="/blogs/new" element={<NewArticle/>} />
    <Route path="/blogs/:id" element={<ArticleView/>} />

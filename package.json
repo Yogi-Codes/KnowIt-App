@@ -1,7 +1,7 @@
 {
   "name": "knowit",
   "version": "0.1.0",
-  "homepage": "https://Yogi-Codes.github.io/KnowIt",
+  "homepage": "https://yogi-codes.github.io/KnowIt-App",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",
