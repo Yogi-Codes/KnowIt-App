@@ -15,7 +15,7 @@ const ArticleView= (props) => {
 
   const [blog, setBlog] = useState([]);
     const getBlog = async () => {
-        await axios.get(`http://localhost:3000/pages/${id}`).then((res) => {
+        await axios.get(`https://knowit-backend.onrender.com/pages/${id}`).then((res) => {
             console.log(res.data);
             setBlog(res.data);
         })

@@ -27,13 +27,12 @@ const [auth,setauth] = useState(false)
 const createArticle = () => {
   
 
-    axios.post('http://localhost:3000/pages', {
+    axios.post('https://knowit-backend.onrender.com/pages', {
       title: title1,
       description: content,
       date : Date.now(),
       thumbnail: thumbnail1,
       cover: cover1
-     
     })
     .then(function (response) {
       console.log(response);
@@ -80,7 +79,7 @@ alignItems: "center",
 justifyContent:"space-evenly", height:"80vh", width:"80%", position:"absolute",background:"White", flexDirection:"column",top:"100px", color:"black"}}>
 <div style={{overflowY: "scroll"}}>
 <h1 style={{alignnItems:"center"}}>Write Your Heart Out ..!</h1>
-<form action="http://localhost:3001/blogs" method="GET" onSubmit={ createArticle  } id="form1" >
+<form action="/blogs" method="GET" onSubmit={ createArticle  } id="form1" >
 <div style={{display:"flex", flexWrap:"wrap",justifyContent:"space-evenly",flexDirection:"colomn"}}>
 <h1>Title </h1>
 <TextField label=" Enter Title" size="small" variant="standard" value={title1} onChange={(event) => {

@@ -14,7 +14,7 @@ function App() {
 
 const [blogs, setBlogs] = useState([]);
     const getBlogs = async () => {
-        await axios.get('http://localhost:3000/pages').then((res) => {
+        await axios.get('https://knowit-backend.onrender.com/pages').then((res) => {
             console.log(res.data);
             setBlogs(res.data);
         })
