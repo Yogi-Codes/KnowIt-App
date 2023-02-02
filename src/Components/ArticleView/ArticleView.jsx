@@ -22,7 +22,7 @@ const ArticleView= (props) => {
     }
     useEffect(() => {
         getBlog();
-    },[]);
+    },);
 
     
 

@@ -3,7 +3,7 @@ import "./NewArticle.css"
 import JoditEditor from 'jodit-react';
 import { useState } from "react";
 import { useRef } from "react";
-
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { SignInWithGoogle } from "../../firebase";
 
@@ -22,28 +22,23 @@ const [auth,setauth] = useState(false)
 
 
 
+const navigate = useNavigate();
 
-
-const createArticle = () => {
-  
-
-    axios.post('https://knowit-backend.onrender.com/pages', {
+const createArticle = async () => {
+ 
+    await axios.post('https://knowit-backend.onrender.com/pages', {
       title: title1,
       description: content,
       date : Date.now(),
       thumbnail: thumbnail1,
       cover: cover1
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
-
-
+    }).then(() => {
+      navigate('/');
+    }).catch((error) => {
+    console.log(error);
+  });
 }
+
 
 const SignIn = async () =>
 
@@ -51,8 +46,7 @@ const SignIn = async () =>
 
 
   var authorized = await SignInWithGoogle()
-  console.log(authorized)
-  console.log("123");
+
 
   if(authorized){
 
@@ -79,7 +73,9 @@ alignItems: "center",
 justifyContent:"space-evenly", height:"80vh", width:"80%", position:"absolute",background:"White", flexDirection:"column",top:"100px", color:"black"}}>
 <div style={{overflowY: "scroll"}}>
 <h1 style={{alignnItems:"center"}}>Write Your Heart Out ..!</h1>
-<form action="/blogs" method="GET" onSubmit={ createArticle  } id="form1" >
+
+
+<form   onSubmit={createArticle}  id="form1" >
 <div style={{display:"flex", flexWrap:"wrap",justifyContent:"space-evenly",flexDirection:"colomn"}}>
 <h1>Title </h1>
 <TextField label=" Enter Title" size="small" variant="standard" value={title1} onChange={(event) => {
@@ -107,7 +103,7 @@ onChange={newContent=>setContent(newContent)}
 />
 
 <div>
-<button className="butt" type="submit"> Create</button>
+<button className="butt" type="submit"  > Create</button>
 </div>
 
 

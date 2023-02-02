@@ -1,7 +1,6 @@
 {
   "name": "knowit",
   "version": "0.1.0",
-  "homepage": "https://yogi-codes.github.io/KnowIt-App",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -12,6 +11,7 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.2",
+    "chalk": "^5.2.0",
     "dotenv": "^16.0.3",
     "firebase": "^9.16.0",
     "gh-pages": "^5.0.0",
